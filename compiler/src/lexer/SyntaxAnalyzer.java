@@ -29,7 +29,6 @@ public class SyntaxAnalyzer {
     public void Analyzer(AnalysisTable A,String[] X,Stack<String> S){
         String start = A.getProduction().getBegin();
         List<TableItem> table = A.getAnalysisTable();
-        TableItem Tablecell;
         S.push("#");
         S.push(start);
         int index = 0;
@@ -50,18 +49,20 @@ public class SyntaxAnalyzer {
             else{
                 judge = 0;
                 for(i = 0;i < table.size();i++){
-                    Tablecell = table.get(i);
-                    if(top.equals(Tablecell.getNonTerminatingSymbol()) && X[index].equals(Tablecell.getTerminatingSymbol())){
+                    if(top.equals(table.get(i).getNonTerminatingSymbol()) && (X[index].equals(table.get(i).getTerminatingSymbol()))){
                         S.pop();
-                        String list[]=Tablecell.getGrammar().getRights().get(0);
-                        for(j = 0;j < list.length;j++){
-                            S.push(list[j]);
+                        String[] list=table.get(i).getGrammar().getRights().get(0);
+                        if(!(list[0].equals("ε"))){
+                            for(j = list.length-1;j >= 0;j--){
+                               S.push(list[j]);
+                            }
                         }
-                        System.out.print(Tablecell.getGrammar().getLeft());
+                        System.out.print(table.get(i).getGrammar().getLeft());
                         System.out.print("->");
                         System.out.print(list);
                         System.out.print("\n");
                         judge = 1;
+                        break;
                     }
                 }
                 if(judge == 0){

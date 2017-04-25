@@ -278,6 +278,7 @@ public class LexicalAnalysis {
         Production PRO = new Production();
         PRO.addproductions();
         PRO.getProductions().get(0).setLeft("E");
+        PRO.setBegin("E");
         PRO.SymbolTest(list);
         List<String> Ter = PRO.getTerminatingSymbol();
         List<String> No_Ter = PRO.getNonTerminatingSymbol();
@@ -292,9 +293,19 @@ public class LexicalAnalysis {
         Analyse.getfollowMap(PRO,"E");
         Map<String,List<String>> FOL = Analyse.getFollowMap();
         Analyse.GetTable(PRO);
+        Analyse.setProduction(PRO);
         for(i = 0;i < Analyse.getAnalysisTable().size();i++){
             System.out.println(Analyse.getAnalysisTable().get(i));
         }
+
+        String[] test = new String[]{"0","+","0","*","0","#"};
+        Stack<String> S = new Stack<String>();
+        SyntaxAnalyzer ANA = new SyntaxAnalyzer();
+        ANA.Analyzer(Analyse,test,S);
+        for(i = 0;i < Analyse.getAnalysisTable().size();i++){
+            System.out.println(Analyse.getAnalysisTable().get(i));
+        }
+
 
 
     }
