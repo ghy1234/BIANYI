@@ -22,11 +22,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="450">
-      <file leaf-file-name="LexicalAnalysis.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="LexicalAnalysis.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/lexer/LexicalAnalysis.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="480">
-              <caret line="305" column="66" selection-start-line="305" selection-start-column="66" selection-end-line="305" selection-end-column="66" />
+            <state relative-caret-position="399">
+              <caret line="296" column="0" selection-start-line="296" selection-start-column="0" selection-end-line="296" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -66,12 +66,11 @@
       <file leaf-file-name="AnalysisTable.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/lexer/AnalysisTable.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="756">
-              <caret line="41" column="0" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
+            <state relative-caret-position="567">
+              <caret line="396" column="0" selection-start-line="396" selection-start-column="0" selection-end-line="396" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#407#408#0" expanded="true" />
-                <element signature="e#440#441#0" expanded="true" />
+                <element signature="e#980#981#0" expanded="true" />
                 <element signature="e#1016#1017#0" expanded="true" />
                 <element signature="method#getfirstMap#0;class#AnalysisTable#0" expanded="false" />
                 <element signature="method#getfollowMap#0;class#AnalysisTable#0" expanded="false" />
@@ -98,11 +97,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SyntaxAnalyzer.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="SyntaxAnalyzer.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/lexer/SyntaxAnalyzer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="156">
-              <caret line="59" column="0" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
+            <state relative-caret-position="221">
+              <caret line="115" column="0" selection-start-line="115" selection-start-column="0" selection-end-line="115" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -132,8 +131,8 @@
         <option value="$PROJECT_DIR$/src/lexer/Grammar.java" />
         <option value="$PROJECT_DIR$/src/lexer/Production.java" />
         <option value="$PROJECT_DIR$/src/lexer/AnalysisTable.java" />
-        <option value="$PROJECT_DIR$/src/lexer/LexicalAnalysis.java" />
         <option value="$PROJECT_DIR$/src/lexer/SyntaxAnalyzer.java" />
+        <option value="$PROJECT_DIR$/src/lexer/LexicalAnalysis.java" />
       </list>
     </option>
   </component>
@@ -174,7 +173,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="Scope" />
       <pane id="PackagesPane" />
       <pane id="ProjectPane">
@@ -215,6 +213,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -716,11 +715,12 @@
       <workItem from="1493101694149" duration="5140000" />
       <workItem from="1493108440316" duration="4485000" />
       <workItem from="1493114490200" duration="16000" />
+      <workItem from="1493117640547" duration="4830000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="116704000" />
+    <option name="totallyTimeSpent" value="121534000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-11" y="-11" width="1942" height="1042" extended-state="6" />
@@ -728,6 +728,7 @@
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32992035" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -748,7 +749,6 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32992035" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
@@ -792,41 +792,9 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/lexer/SyntaxAnalyzer.java</url>
-          <line>52</line>
-          <properties />
-          <option name="timeStamp" value="133" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/lexer/SyntaxAnalyzer.java</url>
-          <line>29</line>
-          <properties />
-          <option name="timeStamp" value="138" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/lexer/SyntaxAnalyzer.java</url>
-          <line>37</line>
-          <properties />
-          <option name="timeStamp" value="139" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/lexer/SyntaxAnalyzer.java</url>
-          <line>59</line>
-          <properties />
-          <option name="timeStamp" value="140" />
-        </line-breakpoint>
-      </breakpoints>
-      <option name="time" value="141" />
+      <option name="time" value="147" />
     </breakpoint-manager>
-    <watches-manager>
-      <configuration name="Application">
-        <watch expression="this" />
-        <watch expression="S" />
-        <watch expression="X[index]" language="JAVA" />
-      </configuration>
-    </watches-manager>
+    <watches-manager />
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
@@ -851,8 +819,7 @@
           <caret line="338" column="0" selection-start-line="338" selection-start-column="0" selection-end-line="339" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#407#408#0" expanded="true" />
-            <element signature="e#440#441#0" expanded="true" />
+            <element signature="e#980#981#0" expanded="true" />
             <element signature="e#1016#1017#0" expanded="true" />
             <element signature="method#getfirstMap#0;class#AnalysisTable#0" expanded="false" />
             <element signature="method#getfollowMap#0;class#AnalysisTable#0" expanded="false" />
@@ -926,8 +893,7 @@
           <caret line="338" column="0" selection-start-line="338" selection-start-column="0" selection-end-line="339" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#407#408#0" expanded="true" />
-            <element signature="e#440#441#0" expanded="true" />
+            <element signature="e#980#981#0" expanded="true" />
             <element signature="e#1016#1017#0" expanded="true" />
             <element signature="method#getfirstMap#0;class#AnalysisTable#0" expanded="false" />
             <element signature="method#getfollowMap#0;class#AnalysisTable#0" expanded="false" />
@@ -1001,8 +967,7 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#407#408#0" expanded="true" />
-            <element signature="e#440#441#0" expanded="true" />
+            <element signature="e#980#981#0" expanded="true" />
             <element signature="e#1016#1017#0" expanded="true" />
             <element signature="method#getfirstMap#0;class#AnalysisTable#0" expanded="false" />
             <element signature="method#getfollowMap#0;class#AnalysisTable#0" expanded="false" />
@@ -1090,8 +1055,7 @@
           <caret line="348" column="13" selection-start-line="348" selection-start-column="13" selection-end-line="348" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#407#408#0" expanded="true" />
-            <element signature="e#440#441#0" expanded="true" />
+            <element signature="e#980#981#0" expanded="true" />
             <element signature="e#1016#1017#0" expanded="true" />
             <element signature="method#getfirstMap#0;class#AnalysisTable#0" expanded="false" />
             <element signature="method#getfollowMap#0;class#AnalysisTable#0" expanded="false" />
@@ -1165,8 +1129,7 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#407#408#0" expanded="true" />
-            <element signature="e#440#441#0" expanded="true" />
+            <element signature="e#980#981#0" expanded="true" />
             <element signature="e#1016#1017#0" expanded="true" />
             <element signature="method#getfirstMap#0;class#AnalysisTable#0" expanded="false" />
             <element signature="method#getfollowMap#0;class#AnalysisTable#0" expanded="false" />
@@ -1307,12 +1270,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/lexer/AnalysisTable.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="756">
-          <caret line="41" column="0" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
+        <state relative-caret-position="567">
+          <caret line="396" column="0" selection-start-line="396" selection-start-column="0" selection-end-line="396" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#407#408#0" expanded="true" />
-            <element signature="e#440#441#0" expanded="true" />
+            <element signature="e#980#981#0" expanded="true" />
             <element signature="e#1016#1017#0" expanded="true" />
             <element signature="method#getfirstMap#0;class#AnalysisTable#0" expanded="false" />
             <element signature="method#getfollowMap#0;class#AnalysisTable#0" expanded="false" />
@@ -1322,21 +1284,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/lexer/LexicalAnalysis.java">
+    <entry file="file://$PROJECT_DIR$/src/lexer/SyntaxAnalyzer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="305" column="66" selection-start-line="305" selection-start-column="66" selection-end-line="305" selection-end-column="66" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="221">
+          <caret line="115" column="0" selection-start-line="115" selection-start-column="0" selection-end-line="115" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/lexer/SyntaxAnalyzer.java">
+    <entry file="file://$PROJECT_DIR$/src/lexer/LexicalAnalysis.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="156">
-          <caret line="59" column="0" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="399">
+          <caret line="296" column="0" selection-start-line="296" selection-start-column="0" selection-end-line="296" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

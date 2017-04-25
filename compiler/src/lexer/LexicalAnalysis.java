@@ -294,19 +294,18 @@ public class LexicalAnalysis {
         Map<String,List<String>> FOL = Analyse.getFollowMap();
         Analyse.GetTable(PRO);
         Analyse.setProduction(PRO);
-        for(i = 0;i < Analyse.getAnalysisTable().size();i++){
-            System.out.println(Analyse.getAnalysisTable().get(i));
-        }
 
         String[] test = new String[]{"0","+","0","*","0","#"};
         Stack<String> S = new Stack<String>();
         SyntaxAnalyzer ANA = new SyntaxAnalyzer();
-        ANA.Analyzer(Analyse,test,S);
-        for(i = 0;i < Analyse.getAnalysisTable().size();i++){
-            System.out.println(Analyse.getAnalysisTable().get(i));
+        int table_length = ANA.Analyzer(Analyse,test,S);
+        for(i = 0;i < table_length+1;i++){
+            System.out.print(ANA.getResult()[i][0]+"\t");
+            System.out.print(ANA.getResult()[i][1]+"\t");
+            System.out.print(ANA.getResult()[i][2]+"\t");
+            System.out.print(ANA.getResult()[i][3]+"\t");
+            System.out.println();
         }
-
-
 
     }
 }
