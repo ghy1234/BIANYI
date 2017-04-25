@@ -192,7 +192,7 @@ public class AnalysisTable {
         }
         List<String> No_ter_list = P.getNonTerminatingSymbol();
         List<Grammar> PRO = P.getProductions();
-        set_fir = P.getNonTerminatingSymbol().indexOf(start);
+        set_fir = No_ter_list.indexOf(start);
         list_right[set_fir].add("#");
         judge = 1;
         while(judge == 1){
@@ -200,83 +200,119 @@ public class AnalysisTable {
             for(i = 0;i < PRO.size();i++){
                 for(z = 0;z < PRO.get(i).getRights().size();z++){
                     String x3[] = PRO.get(i).getRights().get(z);
-                    for(m = 0;m < x3.length-1;m++){
-                        if(is_non_Ter(x3[m],P) && is_Ter(x3[m+1],P) && (!(x3[m+1].equals("ε")))){
-                            j = No_ter_list.indexOf(x3[m]);
-                            list_right[j].add(x3[m+1]);
-                            judge = 1;
-                        }
-                        if(is_non_Ter(x3[m],P) && is_non_Ter(x3[m+1],P) && (!(x3[m+1].equals("ε")))){
-                            list = this.firstMap.get(x3[m+1]);
-                            j = No_ter_list.indexOf(x3[m]);
-                            for(k = 0;k < list.size();k++){
-                                int ex2 = 0;
-                                for(n = 0;n < list_right[j].size();n++){
-                                    if(((list.get(k).equals(list_right[j].get(n)))||list.get(k).equals("ε"))){
-                                        ex2 = 1;
+                    if(x3.length > 1) {
+                        for (m = 0; m < x3.length - 1; m++) {
+                            if (is_non_Ter(x3[m], P) && is_Ter(x3[m + 1], P) && (!(x3[m + 1].equals("ε")))) {
+                                j = No_ter_list.indexOf(x3[m]);
+                                int xz = 0;
+                                for(n = 0;n < list_right[j].size();n++) {
+                                    if (x3[m+1].equals(list_right[j].get(n))){
+                                        xz = 1;
+                                        break;
                                     }
                                 }
-                                if(ex2 == 0){
-                                    list_right[j].add(list.get(k));
+                                if(xz == 0){
+                                    list_right[j].add(x3[m+1]);
                                     judge = 1;
                                 }
                             }
-                        }
-                        if(is_non_Ter(x3[m+1],P) && m==x3.length-2){
-                            if(!(x3[m+1].equals(PRO.get(i).getLeft()))){
-                                list = list_right[No_ter_list.indexOf(PRO.get(i).getLeft())];
-                                j = No_ter_list.indexOf(x3[m+1]);
-                                for(k = 0;k < list.size();k++){
-                                    int ex3 = 0;
-                                    for(n = 0;n < list_right[j].size();n++){
-                                        if(list.get(k).equals(list_right[j].get(n))){
-                                            ex3 = 1;
+                            if (is_non_Ter(x3[m], P) && is_non_Ter(x3[m + 1], P) && (!(x3[m + 1].equals("ε")))) {
+                                list = this.firstMap.get(x3[m + 1]);
+                                j = No_ter_list.indexOf(x3[m]);
+                                for (k = 0; k < list.size(); k++) {
+                                    int ex2 = 0;
+                                    for (n = 0; n < list_right[j].size(); n++) {
+                                        if (((list.get(k).equals(list_right[j].get(n))) || list.get(k).equals("ε"))) {
+                                            ex2 = 1;
                                         }
                                     }
-                                    if(ex3 == 0){
+                                    if (ex2 == 0) {
                                         list_right[j].add(list.get(k));
                                         judge = 1;
                                     }
                                 }
+                                int num = 0;
+                                for (n = m + 1; n < x3.length; n++) {
+                                    list = this.firstMap.get(x3[n]);
+                                    for (k = 0; k < list.size(); k++) {
+                                        if (list.get(k).equals("ε")) {
+                                            num++;
+                                            break;
+                                        }
+                                    }
+                                }
+                                int sum;
+                                if (num + 1 + m < x3.length) {
+                                    sum = num + m + 1 + 1;
+                                } else {
+                                    sum = num + m + 1;
+                                }
+                                for (s = m + 1; s < sum; s++) {
+                                    list = this.firstMap.get(x3[s]);
+                                    for (k = 0; k < list.size(); k++) {
+                                        int xy = 0;
+                                        for (n = 0; n < list_right[j].size(); n++) {
+                                            if (((list.get(k).equals(list_right[j].get(n))) || list.get(k).equals("ε"))) {
+                                                xy = 1;
+                                            }
+                                        }
+                                        if (xy == 0) {
+                                            list_right[j].add(list.get(k));
+                                            judge = 1;
+                                        }
+                                    }
+                                }
                             }
-                        }
-                        if(is_non_Ter(x3[m],P) && is_non_Ter(x3[m+1],P) && m < x3.length-3){
-                            if(!(x3[m+1].equals(PRO.get(i).getLeft()))){
-                                j = No_ter_list.indexOf(x3[m]);
-                                int ex5 = 0;
-                                for(s = m+1;s < x3.length;s++){
-                                    int ex4 = 0;
-                                    for(t = 0;t < PRO.get(No_ter_list.indexOf(x3[s])).getRights().size();t++) {
-                                        String xx[] = PRO.get(No_ter_list.indexOf(x3[s])).getRights().get(t);
-                                        for(n = 0;n < xx.length;n++){
-                                            if(xx[n].equals("ε")){
+                            if (is_non_Ter(x3[m + 1], P) && m == x3.length - 2) {
+                                if (!(x3[m + 1].equals(PRO.get(i).getLeft()))) {
+                                    list = list_right[No_ter_list.indexOf(PRO.get(i).getLeft())];
+                                    j = No_ter_list.indexOf(x3[m + 1]);
+                                    for (k = 0; k < list.size(); k++) {
+                                        int ex3 = 0;
+                                        for (n = 0; n < list_right[j].size(); n++) {
+                                            if (list.get(k).equals(list_right[j].get(n))) {
+                                                ex3 = 1;
+                                            }
+                                        }
+                                        if (ex3 == 0) {
+                                            list_right[j].add(list.get(k));
+                                            judge = 1;
+                                        }
+                                    }
+                                }
+                            }
+                            if (is_non_Ter(x3[m], P) && is_non_Ter(x3[m + 1], P) && m < x3.length - 1) {
+                                if (!(x3[m + 1].equals(PRO.get(i).getLeft()))) {
+                                    j = No_ter_list.indexOf(x3[m]);
+                                    int ex5 = 0;
+                                    for (s = m + 1; s < x3.length; s++) {
+                                        int ex4 = 0;
+                                        list = this.firstMap.get(x3[s]);
+                                        for (t = 0; t < list.size(); t++) {
+                                            if (list.get(t).equals("ε")) {
                                                 ex4 = 1;
                                                 break;
                                             }
                                         }
-                                        if(ex4 == 1){
+                                        if (ex4 == 1) {
+                                            ex5++;
+                                        } else {
                                             break;
                                         }
                                     }
-                                    if(ex4 == 1){
-                                        ex5++;
-                                    }
-                                    else{
-                                        break;
-                                    }
-                                }
-                                if(ex5 == x3.length-m-1){
-                                    list = list_right[No_ter_list.indexOf(PRO.get(i).getLeft())];
-                                    for(k = 0;k < list.size();k++){
-                                        int ex6 = 0;
-                                        for(n = 0;n < list_right[j].size();n++){
-                                            if(list.get(k).equals(list_right[j].get(n))){
-                                                ex6 = 1;
+                                    if (ex5 == x3.length - m - 1) {
+                                        list = list_right[No_ter_list.indexOf(PRO.get(i).getLeft())];
+                                        for (k = 0; k < list.size(); k++) {
+                                            int ex6 = 0;
+                                            for (n = 0; n < list_right[j].size(); n++) {
+                                                if (list.get(k).equals(list_right[j].get(n))) {
+                                                    ex6 = 1;
+                                                }
                                             }
-                                        }
-                                        if(ex6 == 0){
-                                            list_right[j].add(list.get(k));
-                                            judge = 1;
+                                            if (ex6 == 0) {
+                                                list_right[j].add(list.get(k));
+                                                judge = 1;
+                                            }
                                         }
                                     }
                                 }
@@ -288,7 +324,7 @@ public class AnalysisTable {
         }
         for(i = 0;i < PRO.size();i++){
             j = No_ter_list.indexOf(PRO.get(i).getLeft());
-            this.followMap.put(P.getNonTerminatingSymbol().get(j),list_right[j]);
+            this.followMap.put(PRO.get(i).getLeft(),list_right[j]);
         }
     }
 

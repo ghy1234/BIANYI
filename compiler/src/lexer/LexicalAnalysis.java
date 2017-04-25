@@ -277,6 +277,7 @@ public class LexicalAnalysis {
         AnalysisTable Analyse = new AnalysisTable();
         Production PRO = new Production();
         PRO.addproductions();
+        PRO.getProductions().get(0).setLeft("E");
         PRO.SymbolTest(list);
         List<String> Ter = PRO.getTerminatingSymbol();
         List<String> No_Ter = PRO.getNonTerminatingSymbol();
