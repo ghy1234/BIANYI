@@ -291,16 +291,10 @@ public class LexicalAnalysis {
         Map<String,List<String>> FIR = Analyse.getFirstMap();
         Analyse.getfollowMap(PRO,"E");
         Map<String,List<String>> FOL = Analyse.getFollowMap();
-        System.out.println(FIR.get("E"));
-        System.out.println(FIR.get("E'"));
-        System.out.println(FIR.get("T"));
-        System.out.println(FIR.get("T'"));
-        System.out.println(FIR.get("F"));
-        System.out.println(FOL.get("E"));
-        System.out.println(FOL.get("E'"));
-        System.out.println(FOL.get("T"));
-        System.out.println(FOL.get("T'"));
-        System.out.println(FOL.get("F"));
+        Analyse.GetTable(PRO);
+        for(i = 0;i < Analyse.getAnalysisTable().size();i++){
+            System.out.println(Analyse.getAnalysisTable().get(i));
+        }
 
 
     }

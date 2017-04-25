@@ -11,7 +11,7 @@ public class AnalysisTable {
     private Production production;
     private Map<String,List<String>> firstMap = new HashMap<>();
     private Map<String,List<String>> followMap = new HashMap<>();
-    private List<TableItem> analysisTable;
+    private List<TableItem> analysisTable = new ArrayList<>();
 
     public Production getProduction() {
         return production;
@@ -332,30 +332,32 @@ public class AnalysisTable {
         int i,j,z,k,m,n,s,t,judge;
         List<String> list = new ArrayList<>();
         List<String> list_right[] = new List[100];
-        List<String[]> list_rights = null;
+        for(i = 0;i < 100;i++){
+            list_right[i] = new ArrayList<String>();
+        }
         List<String> No_ter_list = P.getNonTerminatingSymbol();
         List<Grammar> PRO = P.getProductions();
-        TableItem cell = new TableItem();
-        Grammar unit = new Grammar();
         for(i = 0;i < PRO.size();i++){
             String left = PRO.get(i).getLeft();
             for(j = 0;j < PRO.get(i).getRights().size();j++)
             {
                 String right[] = PRO.get(i).getRights().get(j);
+                if(right[0].equals("ε"))
+                {
+                    list = this.followMap.get(left);
+                    for(m = 0;m < list.size();m++) {
+                        addanaly(left, list.get(m), right);
+                    }
+                }
                 if(is_Ter(right[0],P )){
-                    cell.setNonTerminatingSymbol(left);
-                    cell.setTerminatingSymbol(right[0]);
-                    unit.setLeft(left);
-                    list_rights.add(right);
-                    unit.setRights(list_rights);
-                    cell.setGrammar(unit);
-                    this.analysisTable.add(cell);
+                    addanaly(left,right[0],right);
                 }
                 if(is_non_Ter(right[0],P)){
                     t = 0;
                     for(k = 0;k <right.length;k++)
                     {
                         if(is_Ter(right[k],P)){
+                            t++;
                             break;
                         }
                         else{
@@ -371,34 +373,25 @@ public class AnalysisTable {
                                 t++;
                             }
                             else{
+                                t++;
                                 break;
                             }
                         }
                     }
-                    if(t == right.length){
+                    if(t == right.length && (!(is_Ter(right[t],P)))){
                         list = this.followMap.get(left);
                         for(z = 0;z < list.size();z++) {
-                            cell.setNonTerminatingSymbol(left);
-                            cell.setTerminatingSymbol(list.get(z));
-                            unit.setLeft(left);
-                            list_rights.add(right);
-                            unit.setRights(list_rights);
-                            cell.setGrammar(unit);
-                            this.analysisTable.add(cell);
+                            addanaly(left,list.get(z),right);
                         }
                     }
-                    if(t < right.length){
+                    if((t == right.length && is_Ter(right[t],P))|| t < right.length){
                         for(s = 0;s < t;s++)
                         {
                             list = this.firstMap.get(right[s]);
                             for(z = 0;z < list.size();z++){
-                                cell.setNonTerminatingSymbol(left);
-                                cell.setTerminatingSymbol(list.get(z));
-                                unit.setLeft(left);
-                                list_rights.add(right);
-                                unit.setRights(list_rights);
-                                cell.setGrammar(unit);
-                                this.analysisTable.add(cell);
+                                if(!(list.get(z).equals("ε"))) {
+                                    addanaly(left,list.get(z),right);
+                                }
                             }
                         }
                     }
@@ -408,6 +401,18 @@ public class AnalysisTable {
     }
 
 
+    public  void addanaly(String x,String y,String z[]){
+        List<String[]> list_rights = new ArrayList<>();
+        TableItem cell = new TableItem();
+        Grammar unit = new Grammar();
+        cell.setNonTerminatingSymbol(x);
+        cell.setTerminatingSymbol(y);
+        unit.setLeft(x);
+        list_rights.add(z);
+        unit.setRights(list_rights);
+        cell.setGrammar(unit);
+        this.analysisTable.add(cell);
+    }
 
     public String SpecialTer(String x){
         if(x.contains("if")){
